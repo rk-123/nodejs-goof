@@ -24,7 +24,7 @@ steps:
     serviceConnectionEndpoint: 'snyk-connection'
     testType: 'app'
     monitorWhen: 'always'
-    failOnIssues: false
+    failOnIssues: true
   displayName: 'Snyk Security Scan'
 
 - script: |
