@@ -17,5 +17,16 @@ steps:
 
 - script: |
     npm install
+  displayName: 'install Dependencies'
+
+- task: SnykSecurityScan@1
+  inputs:
+    serviceConnectionEndpoint: 'snyk-connection'
+    testType: 'app'
+    monitorWhen: 'always'
+    failOnIssues: false
+  displayName: 'Snyk Security Scan'
+
+- script: |
     npm run build
-  displayName: 'npm install and build'
+  displayName: 'Build application'
